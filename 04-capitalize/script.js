@@ -7,7 +7,17 @@
 */
 
 function capitalize(str) {
-    // Напишите код здесь
+    if (str.length === 0) {
+        return str;
+    }
+    str = str[0].toUpperCase() + str.substring(1);
+    return str.split('').reduce(function(preSymbol, symbol) {
+        if (preSymbol[preSymbol.length-1] === ' ') {
+            return preSymbol + symbol.toUpperCase();
+        } else {
+            return preSymbol + symbol;
+        }
+    });
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
