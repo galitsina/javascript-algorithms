@@ -11,11 +11,11 @@ function capitalize(str) {
         return str;
     }
     str = str[0].toUpperCase() + str.substring(1);
-    return str.split('').reduce(function(preSymbol, symbol) {
-        if (preSymbol[preSymbol.length-1] === ' ') {
-            return preSymbol + symbol.toUpperCase();
+    return str.split('').reduce(function(preSymbols, symbol) {
+        if (preSymbols[preSymbols.length-1] === ' ') {
+            return preSymbols + symbol.toUpperCase();
         } else {
-            return preSymbol + symbol;
+            return preSymbols + symbol;
         }
     });
 }
