@@ -14,7 +14,14 @@
 */
 
 function palindrome(str) {
-    // Напишите код здесь
+    if (str.length === 0) {
+        return true;
+    }
+    const directOrder = str.toLowerCase().split('');
+    const reverseOrder = directOrder.reduce(function(preLetter, letter){
+        return letter + preLetter;
+    })    
+    return str.toLowerCase() === reverseOrder;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
