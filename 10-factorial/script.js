@@ -8,7 +8,11 @@
 */
 
 function factorial(n) {
-    // Напишите код здесь
+    let multiply = 1;
+    for (let i = 1; i <= n; i++) {
+        multiply = i * multiply;
+    }
+    return multiply;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
