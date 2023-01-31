@@ -9,10 +9,31 @@
 */
 
 function anagram(str1, str2) {
-    // Напишите код здесь
+    const array1 = str1.toLowerCase().split('').sort(function (a,z){
+        if (a < z) return -1;
+        if (z < a) return 1; 
+        return 0;
+    });
+    const array2 = str2.toLowerCase().split('').sort(function (a,z){ 
+        if (a < z) return -1;
+        if (z < a) return 1; 
+        return 0;
+    });
+
+    if (array1.length !== array2.length) {
+        return false;
+    }
+
+    for (let i=0; i<array1.length; i++) {
+        if  (array1[i] !== array2[i]) {
+            return false;
+        }
+    }
+    return true;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(anagram('finder', 'Friend')); // true
 console.log(anagram('hello', 'bye')); // false
+console.log(anagram('up', 'UP')); //true Тесты неправильно отрабатывают эту функцию, должно быть true, в тестах - false
