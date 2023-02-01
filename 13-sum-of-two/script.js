@@ -9,10 +9,19 @@
 */
 
 function sumOfTwo(arr, sum) {
-   
+    for (let i = 0; i < arr.length; i++){
+        for (let j = i+1; j < arr.length; j++) {
+            if (sum - arr[i] === arr[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(sumOfTwo([1, 2, 3, 4, 5], 4)); // true (так как 1 + 3 === 4)
 console.log(sumOfTwo([1, 2, 3, 4, 5], 100)); // false
+console.log(sumOfTwo([1, 2, 10, 4, 5], 8));
+console.log(sumOfTwo([5], 5));

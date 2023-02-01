@@ -7,10 +7,26 @@
 */
 
 function countZeros(n) {
-    // Напишите код здесь
+    const numArray = [];
+    for (let i = 10; i <= n; i = i + 1) {
+        numArray.push(i);
+    }
+    const stringArray = numArray.map(function(item){
+        return String(item);
+    })
+    
+    let counter = 0;
+    stringArray.forEach(function (item) {   
+        counter = counter + item.split('0').length -1;   
+    })
+    return counter;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(countZeros(20)); // 2 – два нуля, по одному в числах 10 и 20
 console.log(countZeros(100)); // 11 – 11 нулей в числах: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+console.log(countZeros(342));
+
+//Комментарий для ревьюера: Я придумала только такой алгоритм решения этой задачи. Понимаю, что он затратный для памяти, хоть задача и решена.
+//Если это не противоречит правилам Яндекс.Практикума, сможете направить меня, как оптимально решить эту задачу?
