@@ -23,7 +23,7 @@ function isPrime(n) {
 }
 
 function primes(num) {
-    let numArray = [];
+    const numArray = [];
     for (i=2; i<=num; i++) {
         if (isPrime(i)) {
             numArray.push(i);

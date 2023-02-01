@@ -9,12 +9,19 @@
 */
 
 function anagram(str1, str2) {
-    const array1 = str1.toLowerCase().split('').sort(function (a,z){
+    const string1 = str1.toLowerCase();
+    const string2 = str2.toLowerCase();
+
+    if (string1 === string2){
+        return false;
+    }
+
+    const array1 = string1.split('').sort(function (a,z){
         if (a < z) return -1;
         if (z < a) return 1; 
         return 0;
     });
-    const array2 = str2.toLowerCase().split('').sort(function (a,z){ 
+    const array2 = string2.split('').sort(function (a,z){ 
         if (a < z) return -1;
         if (z < a) return 1; 
         return 0;
@@ -36,4 +43,3 @@ function anagram(str1, str2) {
 
 console.log(anagram('finder', 'Friend')); // true
 console.log(anagram('hello', 'bye')); // false
-console.log(anagram('up', 'UP')); //true Тесты неправильно отрабатывают эту функцию, должно быть true, в тестах - false
